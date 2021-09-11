@@ -45,6 +45,13 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        /*
+            * When create a new user then add a user role
+            * User role comes from laratrust
+        */
+        //$user->attachRole('salesman'); // register as salesman
+        $user->attachRole($request->role_id);
+
         event(new Registered($user));
 
         Auth::login($user);
