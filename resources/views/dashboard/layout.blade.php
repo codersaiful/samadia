@@ -33,7 +33,6 @@
         <div class="right_col" role="main">
             @yield('content')
         </div>
-            
         <!-- footer content -->
         @include('dashboard.partial.footer')
         
@@ -41,6 +40,6 @@
     </div>
 
     @include('dashboard.partial.js')
-	
+    @yield('script')
   </body>
 </html>
